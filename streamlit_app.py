@@ -121,7 +121,7 @@ def translate_texts(
                 # Set the source language for the tokenizer
                 tokenizer.src_lang = batch_src_langs[0]
                 logger.info(f"Translating batch {i//batch_size + 1}/{total_batches} with source language '{batch_src_langs[0]}'.")
-
+                
                 # Tokenize the batch of texts
                 encoded = tokenizer(
                     batch_texts,
@@ -208,13 +208,13 @@ def main():
         st.title("📊 Excel Column Translator")
         st.markdown("""
         This application allows you to **upload an Excel file**, **preview the data**, **translate a selected column** into a target language, and **download the translated file**.
-        
+
         **Features**:
         - Supports multiple source languages.
         - Utilizes the **M2M100** model for efficient multilingual translation.
         - Ensures data privacy by performing translations locally without API calls.
         """)
-        
+
         # Sidebar for user inputs
         st.sidebar.header("🔧 Configuration")
 
@@ -361,7 +361,7 @@ def main():
                             st.stop()
 
                     except Exception as e:
-                        logger.error(f"An unexpected error occurred: {e}")
+                        logger.critical(f"An unexpected error occurred: {e}")
                         st.error(f"❌ An unexpected error occurred: {e}")
                         st.stop()
 
