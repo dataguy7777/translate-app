@@ -1,1 +1,9 @@
 streamlit
+polars
+transformers
+sentencepiece
+torch
+langdetect
+openpyxl
+tqdm
+pandas
